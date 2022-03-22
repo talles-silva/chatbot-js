@@ -1,20 +1,13 @@
 var button = document.querySelector("button");
 
 var pergunta1 = "";
-
-var novaDiv = document.querySelector("#novaMensagem");
-button.onclick = function enviar() {
-  pergunta1 = document.querySelector("#name");
-
-  alert(pergunta1.value);
-
-  document.appendChild("div");
-};
-
-document.addEventListener("keydown", function enviar_enter(e) {
-  if (e.key === "Enter") {
+function enviar_click() {
+  button.onclick = function enviar() {
     pergunta1 = document.querySelector("#name");
 
-    alert(pergunta1.value);
-  }
-});
+    console.log(pergunta1.value);
+    pergunta1.value = "";
+  };
+}
+
+document.addEventListener("keydown", enviar_click());
